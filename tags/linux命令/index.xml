@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux命令 on 食粮</title>
+    <link>https://shiliang1105.github.io/tags/linux%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in linux命令 on 食粮</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 May 2022 14:45:50 +0800</lastBuildDate><atom:link href="https://shiliang1105.github.io/tags/linux%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux基本命令</title>
+      <link>https://shiliang1105.github.io/post/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 16 May 2022 14:45:50 +0800</pubDate>
+      
+      <guid>https://shiliang1105.github.io/post/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;h1 id=&#34;linux基本命令&#34;&gt;Linux基本命令&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;目录与文件操作&#34;&gt;目录与文件操作&lt;/h2&gt;
+&lt;p&gt;主键盘快捷键：
+&lt;code&gt;control u&lt;/code&gt; 清除命令行一行
+&lt;code&gt;control d&lt;/code&gt; 删除光标后面的
+&lt;code&gt;control k&lt;/code&gt; 删除光标到行末
+&lt;code&gt;control a&lt;/code&gt; first letter
+&lt;code&gt;control e&lt;/code&gt; end&lt;/p&gt;
+&lt;p&gt;Linux系统目录：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目录&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bin&lt;/td&gt;
+&lt;td&gt;存放二进制可执行文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boot&lt;/td&gt;
+&lt;td&gt;存放开机启动文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dev&lt;/td&gt;
+&lt;td&gt;存放设备文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;home&lt;/td&gt;
+&lt;td&gt;存放普通用户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;etc&lt;/td&gt;
+&lt;td&gt;用户信息与系统配置文件passwd、group&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lib&lt;/td&gt;
+&lt;td&gt;库文件libc.so.6（标准c库）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;root&lt;/td&gt;
+&lt;td&gt;管理员宿主目录（家目录）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;usr&lt;/td&gt;
+&lt;td&gt;用户资源管理目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;cd -&lt;/code&gt;  切换到上一次所在的目录
+![cd -的作用](E:/D_typora/D_Linux/LinuxSystemProgramming/media/16369600407486/屏幕快照 2021-11-15 下午4.19.46.png)&lt;/p&gt;
+&lt;p&gt;Linux系统文件类型：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;表示方法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;普通文件&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;目录文件&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;字符设备文件&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;块设备文件&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;软连接&lt;/td&gt;
+&lt;td&gt;l&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;管道文件&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;套接字&lt;/td&gt;
+&lt;td&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;未知文件&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;cp命令：
+&lt;code&gt;cp filename dirname&lt;/code&gt; 复制文件到目录
+&lt;code&gt;cp filename1 filename2&lt;/code&gt; 复制文件1 并重命名为文件2
+&lt;code&gt;cp -a dirname1 dirname2&lt;/code&gt; 复制目录1及其下所有文件到目录2 
+&lt;code&gt;cp -r dirname1 dirname2&lt;/code&gt; 递归复制目录1到目录2
+这里-a 和-r 的差别在于，-a 是完全复制，文件权限，改动时间什么的也完全相同。&lt;/p&gt;
+&lt;h3 id=&#34;软链接与硬链接&#34;&gt;软链接与硬链接：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;软链接：
+软链接就像windows下的快捷方式。
+&lt;code&gt;ln -s file file.s&lt;/code&gt;  为file创建一个软链接file.s。
+软链接的大小就是文件路径。
+如果用相对路径创建的软链接，在软链接移动之后就会失效，无法访问。绝对路径创建的不会失效。
+用&lt;code&gt;ls -al&lt;/code&gt;查看软链接的权限时,其权限就是软链接的权限，不是软链接指向的文件的权限。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬链接：
+&lt;code&gt;ln file file.h&lt;/code&gt;  创建一个硬链接file.h。
+&lt;code&gt;ln file file.hard&lt;/code&gt;  再为file创建一个硬链接file.hard。此时，对于file文件有两个硬链接file.h和file.hard，无论改变哪个硬链接或者文件本身，这三个文件本身都同步变化。这三个文件的Inode是一样的，每个文件的Inode都是唯一的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文件属性和用户用户组&#34;&gt;文件属性和用户用户组&lt;/h2&gt;
+&lt;h3 id=&#34;chmod修改权限操作&#34;&gt;chmod修改权限操作&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一种，文字设定法
+&lt;code&gt;chmod [who] [+|-|=] [mode] filename&lt;/code&gt;
+操作对象who可以是下述字母中的任一个或者它们的组合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作对象&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;u&lt;/td&gt;
+&lt;td&gt;表示“用户（user）”，即文件或目录的所有者&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;td&gt;表示“同组（group）用户”，即与文件所有者有相同组ID的所有用户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;o&lt;/td&gt;
+&lt;td&gt;表示“其它（other）用户”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;表示“所有（all）用户”，他是系统默认值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;操作符可以是：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作符&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;td&gt;添加某个权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;取消某个权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;=&lt;/td&gt;
+&lt;td&gt;赋予给定权限并取消其他所有权限（如果有的话）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;第二种，数字设定法
+&lt;code&gt;chomd 操作码 filename&lt;/code&gt;       直接用操作码修改文件权限
+r、w、x权限用数字表示为：r对应4，w对应2，x对应1
+如果file文件的权限为-rw-rw-r&amp;ndash;，则owner的权限为rw- = 4+2+0 = 6, group的权限为rw- = 4+2+0 = 6, others的权限为r&amp;ndash; = 4+0+0 = 4；所以该文件的权限数字为664。
+&lt;code&gt;chomd 764 filename&lt;/code&gt;  可以将filename文件的权限改为-rwxrw-r&amp;ndash;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;sudo adduser newusername&lt;/code&gt;   添加新用户
+&lt;code&gt;sudo chown username filename&lt;/code&gt;   修改文件所有者
+&lt;code&gt;su username&lt;/code&gt;   切换当前用户为username
+&lt;code&gt;sudo addgroup groupname&lt;/code&gt;   添加新的用户组
+&lt;code&gt;sudo chgrp groupname filename&lt;/code&gt;  修改用户所属用户组
+&lt;code&gt;sudo chown username:groupname filename&lt;/code&gt;  同时修改文件所属用户和用户组
+&lt;code&gt;sudo deluser username&lt;/code&gt;    删除用户
+&lt;code&gt;sudo delgroup groupname&lt;/code&gt;   删除用户组&lt;/p&gt;
+&lt;h3 id=&#34;find命令&#34;&gt;find命令&lt;/h3&gt;
+&lt;p&gt;找文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-type  按文件类型搜索 d/p/s/c/b/l/(f:文件)&lt;/li&gt;
+&lt;li&gt;-name  按文件名搜索 例如：find ./ -name &amp;lsquo;*.jpg&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;-maxdepth  指定搜索深度。要作为第一个参数出现。
+例如：&lt;code&gt;find -maxdepth 2 -name &#39;*.jpg&#39;&lt;/code&gt;  找2层（包含第一层）目录第文件&lt;/li&gt;
+&lt;li&gt;-size  按文件大小搜索，单位:b、c、w、k、M、G
+b表示块，1b = 512 byte = 0.5 k
+例如：&lt;code&gt;find ./ -size +20M -size -50M&lt;/code&gt;
+两个size一个都不能少，文件大小单位对大小写敏感&lt;/li&gt;
+&lt;li&gt;-atime、mtime、ctime 天 amin、mmin、cmin 分钟&lt;br&gt;
+按时间搜索
+atime  表示最近访问时间
+mtime  表示最近更改时间，指更改文件属性一类的
+ctime  表示最近改动时间，指更改文件内容&lt;/li&gt;
+&lt;li&gt;-exec  将find搜索到的结果集执行某一指定命令
+例如：&lt;code&gt;find /usr/ -name &#39;*tmp*&#39; -exec ls -l {} \;&lt;/code&gt; 搜索包含“tmp”的文件集，然后将搜索到的文件放{}执行&lt;code&gt;ls -l&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;-ok 以交互的方式 将find搜索到的结果执行某一指令。
+例如：&lt;code&gt;find /usr/ -name &#39;*tmp*&#39; -ok ls -l {} \;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;-xargs  将find搜索到的结果集执行某一指定命令
+例如：&lt;code&gt;find /usr/ -name &#39;*tmp*&#39; | xargs ls -l&lt;/code&gt; 搜索包含“tmp”的文件集，然后执行&lt;code&gt;ls -l&lt;/code&gt;。
+&lt;code&gt;-exec&lt;/code&gt;与&lt;code&gt;-xargs&lt;/code&gt;的区别：当结果集很大的时候，xargs会对结果进行分片映射，而exec不会，所以xargs性能会好一些。
+xargs的缺陷为：它默认使用空格来分隔结果集，当文件名有空格时，会因为文件名被切割实效。解决方法：指定切分符号为null。使用-print0:
+&lt;code&gt;find /usr/ -name &#39;*tmp*&#39; -print0 | xargs -print0 ls -l&lt;/code&gt; 第一个-print0指定结果集分割为null，第二个-print0指定xargs分隔为null。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;创建名字带空格的文件方法&#34;&gt;创建名字带空格的文件方法：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;文件名加引号：例如&lt;code&gt;touch &#39;ab cd&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用转义字符：例如&lt;code&gt;touch &#39;ef\ gh&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;grep命令&#34;&gt;grep命令&lt;/h3&gt;
+&lt;p&gt;找文件内容：
+&lt;code&gt;grep -r &#39;copy&#39; ./ -n&lt;/code&gt;  在当前目录的文件中查找“copy”。&lt;code&gt;-n&lt;/code&gt;参数可以显示行号。&lt;code&gt;-r&lt;/code&gt;参数以递归的方式查找。
+ps命令 监控后台进程工作情况。
+&lt;code&gt;ps&lt;/code&gt; 显示当前可以和用户交互的进程。
+&lt;code&gt;ps aux&lt;/code&gt;  显示当前系统所有用户的所有进程。
+&lt;code&gt;ps aux | grep &#39;cupsd&#39;&lt;/code&gt;  检索包含&amp;rsquo;cupsd&amp;rsquo;的进程集。用grep搜索进程，如果只有一条结果，说明当前进程中没有你要检索的内容，显示的那一条是搜索本身占用的进程。&lt;/p&gt;
+&lt;h2 id=&#34;安装卸载软件&#34;&gt;安装卸载软件&lt;/h2&gt;
+&lt;h3 id=&#34;apt-get&#34;&gt;apt-get&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install softname&lt;/code&gt;  安装软件
+&lt;code&gt;sudo apt-get update&lt;/code&gt;  更新软件列表
+&lt;code&gt;sudo apt-get remove softname&lt;/code&gt;  卸载软件&lt;/p&gt;
+&lt;h3 id=&#34;使用安装包进行软件安装&#34;&gt;使用安装包进行软件安装：&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sudo dpkg -i xxx.deb&lt;/code&gt;  安装deb软件包命令
+&lt;code&gt;sudo dpkg -r xxx.deb&lt;/code&gt;  删除deb软件包命令
+&lt;code&gt;sudo dpkg -r --purge xxx.deb&lt;/code&gt;  连同配置文件一起删除命令
+&lt;code&gt;sudo dpkg -info xxx.deb&lt;/code&gt;  查看软件包信息命令
+&lt;code&gt;sudo dpkg -L xxx.deb&lt;/code&gt;  查看文件拷贝详情命令
+&lt;code&gt;sudo dpkg -l&lt;/code&gt;  查看系统已安装软件包信息命令
+&lt;code&gt;sudo dpkg-reconfigure xxx&lt;/code&gt;  重新配置软件包命令&lt;/p&gt;
+&lt;h3 id=&#34;源码安装&#34;&gt;源码安装&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;解压源代码包&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd dir&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure&lt;/code&gt;  检测文件是否缺失，创建Makefile，检测编译环境&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make&lt;/code&gt;  编译源码，生成库和可执行文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo make install&lt;/code&gt;  把库和可执行程序，安装到系统路径下&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo make disclean&lt;/code&gt;  删除和卸载软件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;压缩与解压&#34;&gt;压缩与解压&lt;/h2&gt;
+&lt;h3 id=&#34;gzip和bzip2&#34;&gt;gzip和bzip2&lt;/h3&gt;
+&lt;p&gt;两者都是配合tar打包命令使用。
+这两个压缩的缺陷是都只能对单个文件进行压缩，不能压缩目录也不能打包。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gzip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;tar zcvf 要生成的压缩包名字 压缩材料&lt;/code&gt;  要生成的压缩包名字一般以&lt;code&gt;.tar.gz&lt;/code&gt;结尾。
+例如：&lt;code&gt;tar zcvf spacefile.tar.gz ab\ cd ef\ gh&lt;/code&gt;  将&lt;code&gt;ab\ cd&lt;/code&gt;文件和&lt;code&gt;ef\ gh&lt;/code&gt;文件压缩在一起，压缩后的文件名为&lt;code&gt;spacefile.tar.gz&lt;/code&gt;。
+这个命令包含两步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gzip filename&lt;/code&gt;  压缩文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tar file... tarname&lt;/code&gt;  打包命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;gunzip zipfile&lt;/code&gt;   解压
+所以 &lt;code&gt;tar zcvf&lt;/code&gt; 是两条指令的结合版本
+对 &lt;code&gt;zcvf&lt;/code&gt; 进行解释:
+&lt;code&gt;z&lt;/code&gt;:zip，压缩
+&lt;code&gt;c&lt;/code&gt;:create，创建
+&lt;code&gt;v&lt;/code&gt;:vision，显示压缩过程，可以去掉，直接用 zcf，但这样不显示压缩过程 
+&lt;code&gt;f&lt;/code&gt;:file，文件
+利用&lt;code&gt;file filename&lt;/code&gt;命令可以查看文件来源。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bzip2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;tar jcvf 要生成的压缩包名字 压缩材料&lt;/code&gt;  压缩命令
+&lt;code&gt;tar jxvf 压缩包名字&lt;/code&gt;  解压命令&lt;/p&gt;
+&lt;h3 id=&#34;rar和zip&#34;&gt;rar和zip&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;rar a -r newdir dir&lt;/code&gt;  打包，把dir压缩成newdir.dir，如果压缩材料里没有目录，&lt;code&gt;-r&lt;/code&gt;参数可以省去。
+例如：&lt;code&gt;rar a -r dzip.rar Mydir ab\ cd ef\ gh&lt;/code&gt;
+&lt;code&gt;unrar x newdir.rar&lt;/code&gt;  解压rar文件
+&lt;code&gt;sudo aptitude show softname&lt;/code&gt;  查看软件安装信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;zip -r dir.zip dir&lt;/code&gt;  压缩
+&lt;code&gt;unzip dir.zip&lt;/code&gt;  解压&lt;/p&gt;
+&lt;h3 id=&#34;其他常用命令&#34;&gt;其他常用命令&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;who&lt;/code&gt;  查看当前在线上的用户情况
+&lt;code&gt;whoami&lt;/code&gt;  查看当前用户，不带有进程
+&lt;code&gt;jobs&lt;/code&gt;  查看操作系统当前运行了哪些用户作业
+&lt;code&gt;kill&lt;/code&gt;  杀死进程
+&lt;code&gt;sudo passwd username&lt;/code&gt;  设置用户密码
+&lt;code&gt;sudo su&lt;/code&gt;  切换root用户
+&lt;code&gt;ifconfig&lt;/code&gt;  查看网卡信息
+&lt;code&gt;man&lt;/code&gt; 系统参考手册  &lt;code&gt;man n name&lt;/code&gt;  在系统手册第n章查看name
+&lt;code&gt;alias&lt;/code&gt;  给命令起别名  &lt;code&gt;alias 别名=&#39;指令&#39;&lt;/code&gt;  为指令起别名
+例如：&lt;code&gt;alias pg=&#39;ps aux | grep&#39;&lt;/code&gt;  为指令&lt;code&gt;ps aux | grep&lt;/code&gt;起别名&lt;code&gt;pg&lt;/code&gt;。
+&lt;code&gt;umask&lt;/code&gt;  指定用户创建文件时的掩码（默认去掉文件的执行权限）
+例如：先执行&lt;code&gt;umask 522&lt;/code&gt;然后再执行&lt;code&gt;touch file&lt;/code&gt;，则file文件的权限为&lt;code&gt;--w-r--r--&lt;/code&gt;，数字表示为&lt;code&gt;244&lt;/code&gt;。计算方法：&lt;code&gt;777-522=255&lt;/code&gt;，文件的权限为&lt;code&gt;--w-r-xr-x&lt;/code&gt;，由于系统会去掉执行权限，所以是&lt;code&gt;--w-r--r--&lt;/code&gt;。
+创建目录，默认大小是4096k。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
